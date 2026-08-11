@@ -156,8 +156,8 @@ Windows Development Environment
 GitHub contains the documented and version-controlled definition of the environment.
 
 The server should eventually be capable of being rebuilt from this documentation and the associated Infrastructure as Code repository.
-
-## Build Lifecycle
+------------------------------------
+Build Lifecycle
 
 The intended lifecycle for infrastructure changes is:
 
@@ -176,12 +176,12 @@ Deploy
 Observe
    ↓
 Review
-
-## Guiding principle:
+------------------------------------
+Guiding principle:
 
 Document first, automate second, deploy last.
 
-## Related Projects
+Related Projects
 
 - `teragram-platform` — Project Athena engineering framework and architectural decisions.
 - `teragram-infrastructure` — Infrastructure as Code and automation.
@@ -189,7 +189,7 @@ Document first, automate second, deploy last.
 - `dramaqueen` — DramaQueen application.
 - `athena0x` — Cybersecurity learning and technical documentation.
 
-## Current Milestone
+Current Milestone
 
 **M1 — Server Foundation**
 
