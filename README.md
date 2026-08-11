@@ -161,7 +161,6 @@ The server should eventually be capable of being rebuilt from this documentation
 
 The intended lifecycle for infrastructure changes is:
 
-```text
 Research
    ↓
 Document
@@ -182,7 +181,6 @@ Review
 
 Document first, automate second, deploy last.
 
-```markdown
 ## Related Projects
 
 - `teragram-platform` — Project Athena engineering framework and architectural decisions.
