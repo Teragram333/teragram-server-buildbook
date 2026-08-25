@@ -117,6 +117,8 @@ This includes:
 - Recovery codes
 - Other authentication material
 
+Documentation should use placeholders for identifiable infrastructure values wherever the real value is not required to understand or reproduce the procedure.
+
 Where a configuration requires a secret, the documentation will describe **how the secret is securely provided**, without recording the secret itself.
 
 ---
