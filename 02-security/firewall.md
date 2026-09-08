@@ -33,7 +33,7 @@ ACTIVE
 ```text
 Incoming: DENY
 Outgoing: ALLOW
-Routed:   DISABLED
+Routed:   DENY
 ```
 
 This means inbound connections are denied unless an explicit firewall rule
@@ -142,12 +142,12 @@ The following were verified:
 - [x] Logging enabled
 - [x] Default incoming policy set to deny
 - [x] Default outgoing policy set to allow
-- [x] Routed traffic disabled
+- [x] Routed traffic denied
 - [x] SSH allowed from trusted LAN
 - [x] Public SSH access not intentionally permitted
 - [x] RPCbind disabled
 - [x] Avahi disabled
-- [x] SSH remained accessible after firewall activation
+- [x] LAN-restricted SSH firewall rule verified
 
 ---
 
