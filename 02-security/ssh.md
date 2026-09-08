@@ -7,12 +7,20 @@
 This document records the SSH configuration and hardening applied to the
 Project Athena server.
 
-SSH is the primary remote administration mechanism.
+When enabled, SSH is the remote administration mechanism for controlled server access.
 
 Environment-specific information such as hostnames, IP addresses, usernames,
 key fingerprints, and private keys is intentionally excluded.
 
 ---
+
+## Current Status
+
+SSH is currently disabled and inactive.
+
+There is no active TCP/22 listener.
+
+The hardened SSH configuration remains in place for controlled future re-enablement.
 
 ## Authentication Model
 
@@ -112,8 +120,8 @@ sudo sshd -T
 
 The following controls were verified after configuration:
 
-- [x] SSH service active
-- [x] SSH listening on TCP port 22
+- [x] SSH service disabled and inactive
+- [x] No TCP/22 listener present
 - [x] Public-key authentication working
 - [x] Password authentication disabled
 - [x] Root SSH login disabled
@@ -123,7 +131,7 @@ The following controls were verified after configuration:
 - [x] Login grace period reduced
 - [x] Maximum authentication attempts reduced
 - [x] SSH access restricted to trusted LAN
-- [x] SSH connection successfully tested after firewall activation
+- [x] LAN-restricted SSH firewall rule verified
 
 ---
 
