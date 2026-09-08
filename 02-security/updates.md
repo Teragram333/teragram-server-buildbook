@@ -69,7 +69,7 @@ sudo ss -tulpn
 sudo ufw status verbose
 ```
 
-SSH access should also be tested after security-sensitive system updates.
+SSH access should also be tested after security-sensitive system updates when SSH is enabled.
 
 ---
 
@@ -89,7 +89,7 @@ After a kernel update and reboot:
 - [ ] System boots successfully
 - [ ] NVMe remains the boot device
 - [ ] Network connectivity verified
-- [ ] SSH access verified
+- [ ] Administrative access path verified
 - [ ] Firewall verified
 - [ ] Listening services reviewed
 
