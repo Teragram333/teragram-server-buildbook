@@ -12,6 +12,14 @@ This document is intentionally generic and contains no identifying infrastructur
 
 ---
 
+## Document Scope
+
+This document records the initial security baseline established during the M0 foundation stage.
+
+Some configuration and verification statements below describe the server at the time the baseline was established and are therefore historical. The current server posture is recorded separately in the Current State section.
+
+---
+
 ## Baseline Principles
 
 The server is managed according to the Project Athena engineering principles:
@@ -91,9 +99,37 @@ These values are environment-specific and must not be committed to public docume
 
 ---
 
+# Current State — 8 Sept 2026
+
+The server has progressed beyond the initial M0 baseline.
+
+Current security posture:
+
+- SSH service is disabled and inactive.
+- No TCP/22 listener is currently present.
+- Hardened SSH configuration remains in place for controlled future re-enablement.
+- UFW is active.
+- UFW default incoming policy is DENY.
+- UFW default outgoing policy is ALLOW.
+- UFW default routed policy is DENY.
+- The LAN-restricted TCP/22 firewall rule is retained for future controlled SSH administration.
+- Apache is serving HTTPS on port 443.
+- Apache HTTP port 80 is not currently listened to.
+- Cloudflare Tunnel is the intended public access path.
+- Docker is installed as the application runtime.
+- No containers currently publish host ports.
+- Docker has no TCP API listener.
+- The Docker group has no non-root members.
+- The unused `nfs-blkmap` service has been disabled.
+- Direct public origin exposure is not part of the intended architecture.
+
+The remaining M1 security/infrastructure work is primarily Infrastructure as Code.
+
+---
+
 # 3. SSH Security
 
-SSH is the primary administrative access mechanism.
+When enabled, SSH is the administrative access mechanism for controlled server administration.
 
 ## Authentication
 
@@ -160,7 +196,7 @@ UFW is installed and enabled.
 ```text
 Incoming: DENY
 Outgoing: ALLOW
-Routed:   DISABLED
+Routed:   DENY
 ```
 
 This establishes a default-deny inbound security model.
@@ -232,14 +268,9 @@ Verification:
 
 The listening network services were reviewed as part of the baseline.
 
-The current intentional administrative listener is:
+There is currently no intentional administrative network listener.
 
-```text
-SSH
-TCP
-Port 22
-Trusted LAN only
-```
+SSH is configured for controlled future use but is currently disabled and has no active TCP/22 listener.
 
 Dynamic client-side ports and local application sockets may appear during normal operation. Their presence does not automatically indicate that an inbound firewall rule is required.
 
